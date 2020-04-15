@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Main block */
+        main{
+            padding-right: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 250px;
+            display: flex;
+            align-items: center;
+        }
+        .bgimg-1 {
+            background-image: url("img/titleBg1.JPG");
+        }
+        .bgimg-2 {
+            background-image: url("img/titleBg2.jpg");
+        }
+        .bgimg-3 {
+            background-image: url("img/titleBg3.jpg");
+        }
+        .caption {
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+        .caption span.border {
+            display: inline-block;  
+            background-color: #111;
+            color: #dedede;
+            padding: 18px;
+            font-size: 25px;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+        }
+        main div.textblock{
+            background-color:white;
+            padding:50px 80px;
+            text-align: justify;
+        }
+        div.textblock>h3::first-letter{
+            color: #00771a;
+            text-shadow: 0 0 3px white;
+        }
+        @media (max-width: 1024px) {
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+        main>article{
+            margin-bottom: 10px;
+        }
+        @media (max-width:768px){
+            main div.textblock{
+                padding:25px 25px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="wrapper">
