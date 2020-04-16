@@ -7,63 +7,114 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* Main block */
-        main{
-            padding-right: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-        .bgimg-1, .bgimg-2, .bgimg-3 {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 250px;
-            display: flex;
-            align-items: center;
-        }
-        .bgimg-1 {
-            background-image: url("./img/titleBg1.JPG");
-        }
-        .bgimg-2 {
-            background-image: url("./img/titleBg2.jpg");
-        }
-        .bgimg-3 {
-            background-image: url("./img/titleBg3.jpg");
-        }
-        .caption {
-            width: 100%;
-            text-align: center;
-            color: #000;
-        }
-        .caption span.border {
-            display: inline-block;  
-            background-color: #111;
-            color: #dedede;
-            padding: 18px;
-            font-size: 25px;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-        }
-        main div.textblock{
-            background-color:white;
-            padding:50px 80px;
-            text-align: justify;
-        }
-        div.textblock>h3::first-letter{
-            color: #00771a;
-            text-shadow: 0 0 3px white;
-        }
-        @media (max-width: 1024px) {
-            .bgimg-1, .bgimg-2, .bgimg-3 {
-                background-attachment: scroll;
-            }
+        main>* {
+            box-sizing: border-box;
         }
         main>article{
             margin-bottom: 10px;
         }
-        @media (max-width:768px){
-            main div.textblock{
-                padding:25px 25px;
+        main>h3 {
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            padding-top: 10px;
+        }
+        main>h3::first-letter{
+            color: #00771a;
+        }
+        label[for] {
+            cursor: pointer;
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        .grid{
+            width: 100%;
+        }
+        .lightbox{
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .lightbox {
+            z-index: 99;
+            min-height: 100%;
+            overflow: auto;
+            transform: scale(0);
+            transition: transform .5s ease-out;
+        }
+        .lightbox img {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            max-width: 96%;
+            max-height: 96%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        }
+        input[type="checkbox"]:checked + .lightbox {
+            transform: scale(1);
+        }
+        input[type="checkbox"]:checked ~ .grid {
+            opacity: .125;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            align-content: flex-start;
+            justify-content: space-between;
+            height: 100%;
+            padding: 16px;
+            overflow: auto;
+            background-color: #fff;
+            text-align: center;
+            transition: opacity .75s;
+        }
+        .grid .grid-item {
+            display: inline-block;
+            width: 23%;
+            margin: 10px 0;
+            opacity: .75;
+            transition: opacity .5s;
+            border: 5px solid #fff;
+            box-shadow: 0 0 5px 3px gray;
+        }
+        .grid .grid-item:hover {
+            opacity: 1;
+        }
+        .grid img {
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        }
+        main>article:last-of-type{
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        article>iframe{
+            width:45%;
+            height:250px;
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 1024px) {
+            .grid .grid-item {
+                width: 48%;
+            }
+        }
+
+        @media screen and (max-width: 700px){
+            article>iframe{
+                width:100%;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .grid .grid-item {
+                width: 100%;
             }
         }
     </style>
@@ -132,44 +183,56 @@
           </div>
         <content>
             <main>
-                <div class="bgimg-1">
-                    <div class="caption">
-                        <span class="border">Велич Українських фортець</span>
+                <h3>Фотогалерея</h3>
+                <article>
+                    <input type="checkbox" id="pic-1"/>
+                    <label for="pic-1" class="lightbox"><img src="http://surl.li/bxsi"/></label>
+                    <input type="checkbox" id="pic-2"/>
+                    <label for="pic-2" class="lightbox"><img src="http://surl.li/bxsl"/></label>
+                    <input type="checkbox" id="pic-3"/>
+                    <label for="pic-3" class="lightbox"><img src="http://surl.li/bxsk"/></label>
+                    <input type="checkbox" id="pic-4"/>
+                    <label for="pic-4" class="lightbox"><img src="http://surl.li/bxsm"/></label>
+                    <input type="checkbox" id="pic-5"/>
+                    <label for="pic-5" class="lightbox"><img src="http://surl.li/bxsn"/></label>
+                    <input type="checkbox" id="pic-6"/>
+                    <label for="pic-6" class="lightbox"><img src="http://surl.li/bxsr"/></label>
+                    <input type="checkbox" id="pic-7"/>
+                    <label for="pic-7" class="lightbox"><img src="http://surl.li/bxst"/></label>
+                    <input type="checkbox" id="pic-8"/>
+                    <label for="pic-8" class="lightbox"><img src="http://surl.li/bxsw"/></label>
+                    <input type="checkbox" id="pic-9"/>
+                    <label for="pic-9" class="lightbox"><img src="https://cutt.ly/bt3Hr9Q"/></label>
+                    <input type="checkbox" id="pic-10"/>
+                    <label for="pic-10" class="lightbox"><img src="hhttps://cutt.ly/Ft3HdN2"/></label>
+                    <input type="checkbox" id="pic-11"/>
+                    <label for="pic-11" class="lightbox"><img src="https://cutt.ly/dt3HjxK"/></label>
+                    <input type="checkbox" id="pic-12"/>
+                    <label for="pic-12" class="lightbox"><img src="https://cutt.ly/xt3HvN3"/></label>
                     
-                    </div>
-                  </div>
-                  
-                  <div class="textblock">
-                    <h3>Cтаровинні палаци і замки України</h3>
-                    <p>Українська історія сягає своїм корінням в глибину століть. Археологи щорічно досліджують фортеці України, замки і палаци, вежі і форти. І, якщо музейні запливи можуть витримати далеко не всі, то тур по замках України припаде до душі чи не кожному туристу.</p>
-                    <p>До сих пір немає єдиної думки про те, скільки палаців, замків і фортець приховують простори України на сьогоднішній день. За різними підрахунками ця цифра коливається від 3 000 до 6 000. Найбільша їх концентрація відзначається в південно-західному регіоні, ближче до австрійсько-польського кордону. Але це всього-на-всього цифри на папері, які жодного разу не передадуть велич кам'яних стін. Приховані в хащах, підносяться на вершинах пагорбів, майже зруйновані. Усі занедбані замки і палаци в Україні зберігають в собі сотні історій про людську сміливість, жорстокість, хитрість і про силу духу. До деяких з них потрібно встигнути доторкнутися, адже міцність стін часом обчислюється днями.</p>
-                  </div>
-                  
-                  <div class="bgimg-2">
-                    <div class="caption">
-                    <span class="border">Захоплюючі подих краєвиди</span>
-                    </div>
-                  </div>
-                  
-                  <div class="textblock">
-                    <h3>Природне багатство рідного краю</h3>
-                    <p>Ви коли-небудь тримали у своїх долонях подих вітру? А поцілунок сонця відчували на своїй щоці? Чи може ступали по крайнебу? Можливо збирали краплини щастя на стежках долі?</p>
-                    <p>Якщо вам видаються ці образні запитання дещо дивними, пора організувати подорож до природи, щоб доторкнутися серцем до найкрасивіших місць мальовничої України. Повірте, їх так багато, що треба кількох життів, щоб побувати скрізь! Але нам Богом дароване лиш одне життя, тому поспішаймо насолодитися дивною і загадковою красою природи рідної України.</p>
-                    <p>Українські пейзажі захоплюють та закохують в себе, надихають, сповнюючи життєвих сил. Дивовижно але мандруючи Україною можна побачити та насолодитися не просто не схожими ай насправді унікальними та не схожими ні ніякі інші місцини. Насолодися найцікавішими творіннями природи на території України.</p>
-                  </div>
-                  
-                  <div class="bgimg-3">
-                    <div class="caption">
-                    <span class="border">Подорожуй</span>
-                    </div>
-                  </div>
-                  
-                  <div class="textblock">
-                    <h3>Мандруй Україною</h3>
-                    <p>Як правило, поїздка починається з планування. А найзахопливіша його частина - пошук цікавих місць, які неодмінно потрібно відвідати. І як же прикро потім дізнатися, що якась пам'ятка залишилася без вашої уваги.</p>
-                    <p>Задається питанням, куди поїхати в Україні? Ми впевнені, що в нашій країні є тисячі місць, в які легко закохатися! Які з них відвідати залежить лише від того, чи плануєте ви активний відпочинок, або ж хочете насолодитися природними об'єктами. </p>
-                    <p>Залишилося лише обрати свій власний маршрут! Топай з нами.</p>
-                  </div>
+                    <div class="grid">
+                      <label for="pic-1" class="grid-item"><img src="http://surl.li/bxsi"/></label>
+                      <label for="pic-2" class="grid-item"><img src="http://surl.li/bxsl"/></label>
+                      <label for="pic-3" class="grid-item"><img src="http://surl.li/bxsk"/></label>
+                      <label for="pic-4" class="grid-item"><img src="http://surl.li/bxsm"/></label>
+                      <label for="pic-5" class="grid-item"><img src="http://surl.li/bxsn"/></label>
+                      <label for="pic-6" class="grid-item"><img src="http://surl.li/bxsr"/></label>
+                      <label for="pic-7" class="grid-item"><img src="http://surl.li/bxst"/></label>
+                      <label for="pic-8" class="grid-item"><img src="http://surl.li/bxsw"/></label>
+                      <label for="pic-9" class="grid-item"><img src="https://cutt.ly/bt3Hr9Q"/></label>
+                      <label for="pic-10" class="grid-item"><img src="https://cutt.ly/Ft3HdN2"/></label>
+                      <label for="pic-11" class="grid-item"><img src="https://cutt.ly/dt3HjxK"/></label>
+                      <label for="pic-12" class="grid-item"><img src="https://cutt.ly/xt3HvN3"/></label>
+                    </div>                    
+                </article>
+                <h3>Відеогалерея</h3>
+                <article>
+                    <iframe src="https://www.youtube.com/embed/w41rG3cvINQ" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/b1JQ-pFC4ww" frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/siMSp63a6ZY" frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/n2ScrlWEkvA" frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </article>
+
             </main>
             <aside>
                 <h3>Необхідні речі в поході</h3>
