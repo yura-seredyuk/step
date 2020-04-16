@@ -7,63 +7,57 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* Main block */
-        main{
-            padding-right: 10px;
+        main>* {box-sizing: border-box;}
+        main>article{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
         }
-        .bgimg-1, .bgimg-2, .bgimg-3 {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 250px;
-            display: flex;
-            align-items: center;
+        main>article section{
+            width: 50%;
         }
-        .bgimg-1 {
-            background-image: url("./img/titleBg1.JPG");
-        }
-        .bgimg-2 {
-            background-image: url("./img/titleBg2.jpg");
-        }
-        .bgimg-3 {
-            background-image: url("./img/titleBg3.jpg");
-        }
-        .caption {
+        main>article h3{
             width: 100%;
             text-align: center;
-            color: #000;
+            margin: 20px 0;
         }
-        .caption span.border {
-            display: inline-block;  
-            background-color: #111;
-            color: #dedede;
-            padding: 18px;
-            font-size: 25px;
-            text-transform: uppercase;
-            letter-spacing: 10px;
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
         }
-        main div.textblock{
-            background-color:white;
-            padding:50px 80px;
-            text-align: justify;
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
-        div.textblock>h3::first-letter{
-            color: #00771a;
-            text-shadow: 0 0 3px white;
+        input[type=submit]:hover {
+            background-color: #45a049;
         }
-        @media (max-width: 1024px) {
-            .bgimg-1, .bgimg-2, .bgimg-3 {
-                background-attachment: scroll;
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        main>article iframe{
+            width:100%;
+            height: 450px; 
+            padding: 0 20px;
+        }
+        @media  (max-width:768px){
+            main>article{
+                flex-direction: column;
             }
-        }
-        main>article{
-            margin-bottom: 10px;
-        }
-        @media (max-width:768px){
-            main div.textblock{
-                padding:25px 25px;
+            main>article section{
+                width: 100%;
             }
         }
     </style>
@@ -119,10 +113,10 @@
                     </span>
                 </a></li>
                 <li><a href="#" class="three-d">
-                    Про нас
+                    Контакти
                     <span aria-hidden="true" class="three-d-box">
-                        <span class="front" id="active">Про нас</span>
-                        <span class="back">Про нас</span>
+                        <span class="front" id="active">Контакти</span>
+                        <span class="back">Контакти</span>
                     </span>
                 </a></li>
             </ul>
@@ -132,44 +126,35 @@
           </div>
         <content>
             <main>
-                <div class="bgimg-1">
-                    <div class="caption">
-                        <span class="border">Велич Українських фортець</span>
-                    
-                    </div>
-                  </div>
-                  
-                  <div class="textblock">
-                    <h3>Cтаровинні палаци і замки України</h3>
-                    <p>Українська історія сягає своїм корінням в глибину століть. Археологи щорічно досліджують фортеці України, замки і палаци, вежі і форти. І, якщо музейні запливи можуть витримати далеко не всі, то тур по замках України припаде до душі чи не кожному туристу.</p>
-                    <p>До сих пір немає єдиної думки про те, скільки палаців, замків і фортець приховують простори України на сьогоднішній день. За різними підрахунками ця цифра коливається від 3 000 до 6 000. Найбільша їх концентрація відзначається в південно-західному регіоні, ближче до австрійсько-польського кордону. Але це всього-на-всього цифри на папері, які жодного разу не передадуть велич кам'яних стін. Приховані в хащах, підносяться на вершинах пагорбів, майже зруйновані. Усі занедбані замки і палаци в Україні зберігають в собі сотні історій про людську сміливість, жорстокість, хитрість і про силу духу. До деяких з них потрібно встигнути доторкнутися, адже міцність стін часом обчислюється днями.</p>
-                  </div>
-                  
-                  <div class="bgimg-2">
-                    <div class="caption">
-                    <span class="border">Захоплюючі подих краєвиди</span>
-                    </div>
-                  </div>
-                  
-                  <div class="textblock">
-                    <h3>Природне багатство рідного краю</h3>
-                    <p>Ви коли-небудь тримали у своїх долонях подих вітру? А поцілунок сонця відчували на своїй щоці? Чи може ступали по крайнебу? Можливо збирали краплини щастя на стежках долі?</p>
-                    <p>Якщо вам видаються ці образні запитання дещо дивними, пора організувати подорож до природи, щоб доторкнутися серцем до найкрасивіших місць мальовничої України. Повірте, їх так багато, що треба кількох життів, щоб побувати скрізь! Але нам Богом дароване лиш одне життя, тому поспішаймо насолодитися дивною і загадковою красою природи рідної України.</p>
-                    <p>Українські пейзажі захоплюють та закохують в себе, надихають, сповнюючи життєвих сил. Дивовижно але мандруючи Україною можна побачити та насолодитися не просто не схожими ай насправді унікальними та не схожими ні ніякі інші місцини. Насолодися найцікавішими творіннями природи на території України.</p>
-                  </div>
-                  
-                  <div class="bgimg-3">
-                    <div class="caption">
-                    <span class="border">Подорожуй</span>
-                    </div>
-                  </div>
-                  
-                  <div class="textblock">
-                    <h3>Мандруй Україною</h3>
-                    <p>Як правило, поїздка починається з планування. А найзахопливіша його частина - пошук цікавих місць, які неодмінно потрібно відвідати. І як же прикро потім дізнатися, що якась пам'ятка залишилася без вашої уваги.</p>
-                    <p>Задається питанням, куди поїхати в Україні? Ми впевнені, що в нашій країні є тисячі місць, в які легко закохатися! Які з них відвідати залежить лише від того, чи плануєте ви активний відпочинок, або ж хочете насолодитися природними об'єктами. </p>
-                    <p>Залишилося лише обрати свій власний маршрут! Топай з нами.</p>
-                  </div>
+                <article>
+                    <section>
+                        <h3>Зв’яжіться з нами</h3>
+                        <div class="container">
+                        <form action="/action_page.php">
+                            <label for="fname">Ім’я</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Ваше ім’я..">
+    
+                            <label for="lname">Прізвище</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Ваше прізвище..">
+    
+                            <label for="email">Електронна пошта</label>
+                            <input type="text" id="email" name="email" placeholder="email..">
+    
+                            <label for="theme">Тема</label>
+                            <input type="text" id="theme" name="theme" placeholder="Вкажіть тему..">
+    
+                            <label for="subject">Повідомлення</label>
+                            <textarea id="subject" name="subject" placeholder="Напишіть щось.." style="height:200px"></textarea>
+    
+                            <input type="submit" value="Надіслати">
+                        </form>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>Як нас знайти</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2128.905500288022!2d26.282170526940757!3d50.613934059880776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472f136401893627%3A0x4304ac954ed99861!2z0LLRg9C70LjRhtGPINCa0LjRl9Cy0YHRjNC60LAsIDQ2LCDQoNGW0LLQvdC1LCDQoNGW0LLQvdC10L3RgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgMzMwMDA!5e0!3m2!1suk!2sua!4v1587075440535!5m2!1suk!2sua" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </section>
+                </article>
             </main>
             <aside>
                 <h3>Необхідні речі в поході</h3>
