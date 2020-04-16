@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 html{
-    background: url(img/bodyBg.JPG) no-repeat center center fixed;
+    background: url(../img/bodyBg.JPG) no-repeat center center fixed;
     background-size: cover;
 }
 body{
@@ -64,7 +64,7 @@ p{
 /* Header */
 
 header{
-    background-image: url(img/headerBg1.jpg);
+    background-image: url(../img/headerBg1.jpg);
     background-position: center;
     height: 310px;
     animation-name: headerAnim;
@@ -73,13 +73,13 @@ header{
 }
 @keyframes headerAnim{
     0%{
-        background-image: url(img/headerBg1.jpg);
+        background-image: url(../img/headerBg1.jpg);
     }
     33.333%{
-        background-image: url(img/headerBg2.jpg);
+        background-image: url(../img/headerBg2.jpg);
     }
     66.666%{
-        background-image: url(img/headerBg3.jpg);
+        background-image: url(../img/headerBg3.jpg);
     }
 }
 header div{
@@ -202,12 +202,12 @@ aside figure{
 
 @font-face {
     font-family: 'fontello';
-    src: url('./font/fontello.eot?27362207');
-    src: url('./font/fontello.eot?27362207#iefix') format('embedded-opentype'),
-         url('./font/fontello.woff2?27362207') format('woff2'),
-         url('./font/fontello.woff?27362207') format('woff'),
-         url('./font/fontello.ttf?27362207') format('truetype'),
-         url('./font/fontello.svg?27362207#fontello') format('svg');
+    src: url('../font/fontello.eot?27362207');
+    src: url('../font/fontello.eot?27362207#iefix') format('embedded-opentype'),
+         url('../font/fontello.woff2?27362207') format('woff2'),
+         url('../font/fontello.woff?27362207') format('woff'),
+         url('../font/fontello.ttf?27362207') format('truetype'),
+         url('../font/fontello.svg?27362207#fontello') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -245,9 +245,6 @@ footer{
     color: #dedede;
     padding: 20px;
     text-align: center;
-}
-footer section{
-    border: 1px solid red;
 }
 footer>section{
     display: flex;
@@ -295,11 +292,9 @@ footer>section:nth-last-of-type(1){
         padding: 25px 50% 0 25px;  
     }
     #contacts div{
-        width: 180px;
         font-size: 12px;
     } 
 }
-
 
 @media (min-width:481px) and (max-width:768px) {
     header{
@@ -345,7 +340,7 @@ footer>section:nth-last-of-type(1){
     }
     header div{
         padding: 10px;
-        max-width: 450px;  
+        max-width: 460px;  
     }
     .block-menu li a{
         font-size: 14px;
