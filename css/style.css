@@ -175,6 +175,15 @@ content{
     justify-content: space-between;
     align-items: flex-start;
 }
+
+/* Main block */
+main{
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
 /* Aside block */
 
 aside{
@@ -292,8 +301,10 @@ footer>section:nth-last-of-type(1){
         padding: 25px 50% 0 25px;  
     }
     #contacts div{
+        width: 180px;
         font-size: 12px;
-    } 
+    }
+
 }
 
 @media (min-width:481px) and (max-width:768px) {
@@ -311,6 +322,7 @@ footer>section:nth-last-of-type(1){
     }
     main{
         padding-right: 0;
+        margin-right: 0;
     }
     aside{
         margin-top: 10px;
@@ -350,6 +362,7 @@ footer>section:nth-last-of-type(1){
     }
     main{
         padding-right: 0;
+        margin-right: 0;
     }
     aside{
         margin-top: 10px;
