@@ -353,12 +353,14 @@ footer>section:nth-last-of-type(1){
     } 
 }
 @media (max-width:480px) {
+    #wrapper{
+        width: 100%;
+    }
     header{
         height: 160px;  
     }
     header div{
         padding: 10px;
-        max-width: 460px;  
     }
     .block-menu li a{
         font-size: 14px;
